@@ -15,8 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class NotasActivity extends AppCompatActivity implements NotasInteractionListener {
-
+public class DashboardActivity extends AppCompatActivity {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,18 +60,5 @@ public class NotasActivity extends AppCompatActivity implements NotasInteraction
 
     }
 
-    @Override
-    public void editNotaClik(Nota nota) {
 
-    }
-
-    @Override
-    public void eliminarNotaClick(Nota nota) {
-
-    }
-
-    @Override
-    public void favoritaNotaClick(Nota nota) {
-
-    }
 }
