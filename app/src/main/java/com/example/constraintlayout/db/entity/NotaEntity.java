@@ -1,4 +1,4 @@
-package com.example.constraintlayout;
+package com.example.constraintlayout.db.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

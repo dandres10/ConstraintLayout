@@ -1,4 +1,4 @@
-package com.example.constraintlayout;
+package com.example.constraintlayout.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.constraintlayout.db.entity.NotaEntity;
+import com.example.constraintlayout.R;
 
 import java.util.List;
 
