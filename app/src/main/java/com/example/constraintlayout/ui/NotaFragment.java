@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,9 +13,13 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.constraintlayout.NuevaNotaDialogFragment;
 import com.example.constraintlayout.NuevaNotaDialogViewModel;
 import com.example.constraintlayout.R;
 import com.example.constraintlayout.db.entity.NotaEntity;
@@ -55,6 +60,10 @@ public class NotaFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+        //se indica que este fragment tiene un menu propio
+        setHasOptionsMenu(true);
+
+
     }
 
     @Override
@@ -96,6 +105,27 @@ public class NotaFragment extends Fragment {
 
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.options_menu_nota_fragment,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_add_nota:
+                mostrarDialogoNuevoNota();
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void mostrarDialogoNuevoNota() {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        NuevaNotaDialogFragment dialogNuevaNota = new NuevaNotaDialogFragment();
+        dialogNuevaNota.show(fm,"NuevaNotaDialogFragment");
+    }
 
     private int GenerarColumnas(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -106,6 +136,8 @@ public class NotaFragment extends Fragment {
     private boolean DefinirOrientacion(View view) {
         return view.getId() == R.id.listPortrait ? true : false;
     }
+
+
 
 
 }
