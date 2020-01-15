@@ -32,6 +32,8 @@ public class NuevaNotaDialogFragment extends DialogFragment {
 
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Nueva nota");
         builder.setMessage("Introduzca los datos de la nueva nota")
@@ -71,14 +73,14 @@ public class NuevaNotaDialogFragment extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         view = inflater.inflate(R.layout.nueva_nota_dialog_fragment, null);
 
-        etTitulo = view.findViewById(R.id.textViewTitulo);
-        etContenido = view.findViewById(R.id.textViewContenido);
+        etTitulo = view.findViewById(R.id.editTextTitulo);
+        etContenido = view.findViewById(R.id.editTextContenido);
         rgColor = view.findViewById(R.id.radioGroupColor);
         swNotaFavorita = view.findViewById(R.id.switchNotaFavorita);
 
 
-        builder.setView(view);
 
+        builder.setView(view);
         return builder.create();
 
     }
