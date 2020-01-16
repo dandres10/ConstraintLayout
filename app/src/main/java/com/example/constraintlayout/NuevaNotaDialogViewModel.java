@@ -24,4 +24,5 @@ public class NuevaNotaDialogViewModel extends AndroidViewModel {
     public LiveData<List<NotaEntity>> getAllNotas(){return allNotas;}
     //El fragmento que inserte una nueva nota, debera comunicarlo a este ViewModel
     public void insertNota(NotaEntity nuevaNotaEntity){ notaRepository.insert(nuevaNotaEntity); }
+    public void updateNota(NotaEntity notaActualizarEntity){ notaRepository.update(notaActualizarEntity); }
 }

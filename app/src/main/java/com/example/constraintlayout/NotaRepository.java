@@ -25,6 +25,7 @@ public class NotaRepository {
 
     public LiveData<List<NotaEntity>> getAll(){return allNotas;}
     public LiveData<List<NotaEntity>> getAllFavs(){return allNotasFavoritas;}
+
     public void insert (NotaEntity nota){
         new insertAsyncTask(notaDao).execute(nota);
     }
@@ -39,6 +40,23 @@ public class NotaRepository {
         @Override
         protected Void doInBackground(NotaEntity... notaEntities) {
             notaDaoAsyncTask.insert(notaEntities[0]);
+            return null;
+        }
+    }
+
+
+    public void update (NotaEntity nota){new updateAsyncTask(notaDao).execute(nota);}
+
+    private static class updateAsyncTask extends AsyncTask<NotaEntity, Void,Void>{
+        private NotaDao notaDaoAsyncTask;
+
+        updateAsyncTask(NotaDao dao){
+            notaDaoAsyncTask = dao;
+        }
+
+        @Override
+        protected Void doInBackground(NotaEntity... notaEntities) {
+            notaDaoAsyncTask.update(notaEntities[0]);
             return null;
         }
     }
