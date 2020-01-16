@@ -1,19 +1,16 @@
-package com.example.constraintlayout;
+package com.example.constraintlayout.ui;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.constraintlayout.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-public class NotasActivity extends AppCompatActivity implements NotasInteractionListener {
+public class DashboardActivity extends AppCompatActivity {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,18 +55,5 @@ public class NotasActivity extends AppCompatActivity implements NotasInteraction
 
     }
 
-    @Override
-    public void editNotaClik(Nota nota) {
 
-    }
-
-    @Override
-    public void eliminarNotaClick(Nota nota) {
-
-    }
-
-    @Override
-    public void favoritaNotaClick(Nota nota) {
-
-    }
 }

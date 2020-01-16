@@ -1,4 +1,4 @@
-package com.example.constraintlayout;
+package com.example.constraintlayout.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.constraintlayout.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,NotasActivity.class);
+                Intent i = new Intent(MainActivity.this, DashboardActivity.class);
                 startActivity(i);
             }
         });
