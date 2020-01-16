@@ -30,5 +30,4 @@ public interface NotaDao {
     @Query("SELECT * FROM notas WHERE favorita LIKE 'true'")
     LiveData<List<NotaEntity>> getAllFavoritas();
 
-
 }
